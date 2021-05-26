@@ -6,14 +6,17 @@ import boto3
 import base64
 from botocore.exceptions import ClientError
 import json
+import os
 
 def get_secret():
 
     secret_name = "recruitr-db-credentials"
     region_name = "us-west-2"
+    
 
     # Create a Secrets Manager client
-    session = boto3.session.Session()
+    session = boto3.session.Session(aws_access_key_id= os.environ.get("AWS_ACCESS_KEY_ID") , aws_secret_access_key= os.environ.get("AWS_SECRET_ACCESS_KEY"))
+
     client = session.client(
         service_name='secretsmanager',
         region_name=region_name
