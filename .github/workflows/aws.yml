@@ -38,8 +38,7 @@ jobs:
 
     steps:
     - name: List files in the repository
-        run: |
-          ls
+        run: ls
 
     - name: Checkout
       uses: actions/checkout@v2
