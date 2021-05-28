@@ -39,7 +39,7 @@ jobs:
     steps:
     - name: List files in the repository
       run: |
-          ls ${{ github.workspace }}
+          ls
 
     - name: Checkout
       uses: actions/checkout@v2
