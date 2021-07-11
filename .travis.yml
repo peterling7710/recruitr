@@ -7,8 +7,8 @@ services:
 before_install:
   - docker build -t peterl732/recruitr -f Dockerfile.dev ./recruitr
 
-#script:
-#  - docker run -e CI=true peterl732/recruitr
+script:
+  - docker run -e CI=true peterl732/recruitr
 
 deploy:
   provider: elasticbeanstalk
