@@ -10,8 +10,8 @@ import os
 
 def get_secret():
 
-    secret_name = "recruitr-db-credentials"
-    region_name = "us-west-2"
+    secret_name = "recruitr-user"
+    region_name = "us-east-1"
     
 
     # Create a Secrets Manager client
