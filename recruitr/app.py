@@ -42,7 +42,7 @@ class Transaction(db.Model):
         return f'{self.first_name} {self.last_name} spent {self.amount}'
 
 '''
-#
+#Todo:
 # Serve React App
 @app.route("/")
 def my_index():
