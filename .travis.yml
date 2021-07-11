@@ -9,3 +9,13 @@ before_install:
 
 script:
   - docker run -e CI=true peterl732/recruitr
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'us-east-1'
+  app: 'recruitr-app'
+  env: 'Recruitrapp-env'
+  bucket_name: 'elasticbeanstalk-us-east-1-426715826403'
+  bucket_path: 'recruitr-app'
+  on:
+    branch: master
