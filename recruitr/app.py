@@ -46,8 +46,8 @@ class Transaction(db.Model):
 # Serve React App
 @app.route("/")
 def my_index():
-    #return render_template("index.html", flask_token="Hello world")
-    return "Hello World"
+    return render_template("index.html", flask_token="Hello world")
+    #return "Hello World"
 
 '''
 @app.route('/list_db')
