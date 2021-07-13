@@ -41,13 +41,13 @@ ENV POSTGRES_URL $POSTGRES_URL
 ENV POSTGRES_DB $POSTGRES_DB
 
 # Avoid cache purge by adding requirements first
-ADD ./requirements.txt ./requirements.txt
+COPY requirements.txt ./
 
-RUN pip install --no-cache-dir -r ./requirements.txt --user
+RUN pip install --no-cache-dir -r requirements.txt --user
 
 # Add the rest of the files
 COPY . /app
 WORKDIR /app
-
+EXPOSE 5000
 # start web server
 CMD ["gunicorn", "-b", "0.0.0.0:5000", "app:app", "--workers=5"]
